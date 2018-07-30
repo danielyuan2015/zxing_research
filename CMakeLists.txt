@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.0)
 project(zxing)
 
 option(BUILD_TESTING "Enable generation of test targets" OFF)
+#option(BUILD_TESTING "Enable generation of test targets" ON)
 
 set(CMAKE_LIBRARY_PATH /opt/local/lib ${CMAKE_LIBRARY_PATH})
 
@@ -42,6 +43,10 @@ if(WIN32)
     set(CMAKE_DEBUG_POSTFIX -debug)
 endif()
 
+#daniel:Add opencv module path here
+#set(CMAKE_MODULE_PATH /home/daniel/workspace/git/opencv3.4.1/opencv/installed_x86)
+set(OpenCV_DIR /home/daniel/workspace/git/opencv3.4.1/opencv/installed_x86/share/OpenCV)
+#set(OpenCV_INCLUDE_DIRS /home/daniel/workspace/git/opencv3.4.1/opencv/installed_x86)
 # OpenCV classes
 find_package(OpenCV)
 if(OpenCV_FOUND)
